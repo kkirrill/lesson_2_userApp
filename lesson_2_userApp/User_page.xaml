@@ -1,0 +1,33 @@
+﻿<Window x:Class="lesson_2_userApp.User_page"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lesson_2_userApp"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Пользователь" Height="600" Width="800">
+    <Grid Background="SeaGreen">
+        <Border MinWidth="400" Margin="15" Background="LightGreen" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="60" Color="DarkGreen" ShadowDepth="5"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Кабинет пользователя"  FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <ListView x:Name="ListUsers" Margin="10">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="{Binding login}" FontWeight ="Bold"/>
+                                <TextBlock Text=", "/>
+                                <TextBlock Text="{Binding email}"/>
+                                
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>
